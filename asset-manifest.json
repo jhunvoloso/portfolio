@@ -1,13 +1,22 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.c2d4d926.css",
-    "main.js": "/portfolio/static/js/main.a2c5be37.js",
+    "main.js": "/portfolio/static/js/main.1180f78a.js",
     "static/js/592.32d82b17.chunk.js": "/portfolio/static/js/592.32d82b17.chunk.js",
+    "static/media/resume.pdf": "/portfolio/static/media/resume.40dd74e9e39863048bff.pdf",
     "static/media/pt.png": "/portfolio/static/media/pt.cddfa324ee2db8ed3766.png",
+    "static/media/3DConsumer.png": "/portfolio/static/media/3DConsumer.e753502853b2eb844a5a.png",
+    "static/media/psymetrics.png": "/portfolio/static/media/psymetrics.6fc918098a89a3ebf397.png",
     "static/media/dwm.png": "/portfolio/static/media/dwm.04a7cd3253a7d3df5153.png",
+    "static/media/journal.png": "/portfolio/static/media/journal.68ffe0821638b956d802.png",
+    "static/media/SilverStonks.png": "/portfolio/static/media/SilverStonks.0395116b7d59da146bde.png",
     "static/media/mm.png": "/portfolio/static/media/mm.1e9afb3e69553d7a2d61.png",
     "static/media/ss.png": "/portfolio/static/media/ss.55ab4d819b26a92c9060.png",
     "static/media/fl.png": "/portfolio/static/media/fl.0642ea33704e56069fd1.png",
+    "static/media/fadworks.png": "/portfolio/static/media/fadworks.28e544d79cd292edc9c2.png",
+    "static/media/JNYC.png": "/portfolio/static/media/JNYC.913ba2f509dc49eb595e.png",
+    "static/media/MyFavor.png": "/portfolio/static/media/MyFavor.1de139ec2f6e9d483ac3.png",
+    "static/media/tariff.png": "/portfolio/static/media/tariff.4a6e4b8a7acbc5b95e36.png",
     "static/media/profile-pic.png": "/portfolio/static/media/profile-pic.795844dd18388ba7916c.png",
     "static/media/scss.svg": "/portfolio/static/media/scss.549655da7f31b902806bdc1e07ba4b5e.svg",
     "static/media/xmp.svg": "/portfolio/static/media/xmp.e5d8ec2cb1507aa8c0a9435fbd2a3dcd.svg",
@@ -46,11 +55,11 @@
     "static/media/arrow-right.svg": "/portfolio/static/media/arrow-right.5bc5a3fba40d114f0d736b1fc219c0ed.svg",
     "static/media/arrow-down.svg": "/portfolio/static/media/arrow-down.0bea1abd1b13fb0c535be2549950cf95.svg",
     "main.c2d4d926.css.map": "/portfolio/static/css/main.c2d4d926.css.map",
-    "main.a2c5be37.js.map": "/portfolio/static/js/main.a2c5be37.js.map",
+    "main.1180f78a.js.map": "/portfolio/static/js/main.1180f78a.js.map",
     "592.32d82b17.chunk.js.map": "/portfolio/static/js/592.32d82b17.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c2d4d926.css",
-    "static/js/main.a2c5be37.js"
+    "static/js/main.1180f78a.js"
   ]
 }
