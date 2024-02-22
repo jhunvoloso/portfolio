@@ -3,6 +3,7 @@ import fl from "../img/fl.png";
 import ss from "../img/ss.png";
 import mm from "../img/mm.png";
 import pt from "../img/pt.png";
+import dwm from "../img/dwm.png";
 
 import React from "react";
 
@@ -37,9 +38,9 @@ export const projectsList = [
   },
   {
     id: 5,
-    title: "Peoples Taliba",
-    role: "Full Stack Developer",
-    thumbnail: pt,
+    title: "Think DWM",
+    role: "UX / UI Developer",
+    thumbnail: dwm,
     desc: "",
   },
 ];
