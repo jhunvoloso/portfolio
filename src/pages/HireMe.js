@@ -1,11 +1,13 @@
 import React, { useRef } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import MainLayout from "../layout/MainLayout";
 import PhoneIcon from "../img/ph_phone-light.svg";
 import MailIcon from "../img/mail-icon.svg";
 import ArrowRightUp from "../img/arrow-right-up.svg";
 import ArrowDown from "../img/arrow-down.svg";
 import Download from "../img/download.svg";
+
+import RESUME from '../assets/resume.pdf'
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -39,6 +41,19 @@ function HireMe() {
     },
     { scope: hire }
   );
+
+  // const handleDownload = ()=>{
+  //   const pdfURL = resume;
+  //   const a = document.createElement('a');
+  //   a.href = pdfURL;
+  //   a.download = 'JhunVoloso-Resume.pdf';
+  //   document.appendChild(a);
+  //   a.click();
+  //   document.removeChild(a);
+  // }
+
+
+
   return (
     <MainLayout>
       <div id="banner" className="container" ref={hire}>
@@ -58,11 +73,17 @@ function HireMe() {
 
         <div>
           <div className="display-flex dir-col gap-30">
-            <div id="contact" className="display-flex dir-recent-proj-wrapper gap-20">
+            <div
+              id="contact"
+              className="display-flex dir-recent-proj-wrapper gap-20"
+            >
               <img src={PhoneIcon} alt="" />
               <span className="txt-light fs-16 fw-300">+63 928 275 9392</span>
             </div>
-            <div id="email" className="display-flex dir-recent-proj-wrapper gap-20">
+            <div
+              id="email"
+              className="display-flex dir-recent-proj-wrapper gap-20"
+            >
               <img src={MailIcon} alt="" />
               <span className="txt-light fs-16 fw-300">
                 jhunvoloso@gmail.com
@@ -72,7 +93,7 @@ function HireMe() {
         </div>
 
         <div id="resume" className="display-flex dir-col gap-10">
-          <NavLink className="btn-outline">
+          <a href={RESUME} download="JHUNVOLOSO-Resume.pdf" target="_blank" className="btn-outline">
             Download Resume{" "}
             <svg
               id="download"
@@ -87,7 +108,7 @@ function HireMe() {
                 fill="white"
               />
             </svg>
-          </NavLink>
+          </a>
         </div>
       </div>
     </MainLayout>

@@ -32,6 +32,8 @@ function ProjectList() {
   const [projThumb, setProjThumb] = useState("");
   const [projDesc, setProjDesc] = useState("");
   const [projRole, setProjRole] = useState("");
+  const [projUrl, setProjUrl] = useState("");
+  const [projUrlToggle, setProjUrlToggle] = useState("none");
 
   // Animation
   useGSAP(
@@ -78,10 +80,23 @@ function ProjectList() {
     });
   });
 
+  const checkurl = () => {
+    return projUrl !== undefined ? (
+      <Link to={projUrl} target="_blank" className="btn-line-link">
+        {" "}
+        Visit Site <img src={ArrowRightUp} alt="" />{" "}
+      </Link>
+    ) : (
+      console.log("=> undefined" + projUrl)
+    );
+  };
+
   useEffect(() => {
     toggleProjectDetails === true
       ? ctx_open_proj_dets.open_proj_dets()
       : ctx_open_proj_dets.close_proj_dets();
+
+    projUrl !== "" ? setProjUrlToggle("flex") :  setProjUrlToggle('none');
 
     return () => {
       toggleProjectDetails ? console.log("true") : console.log("false");
@@ -101,6 +116,7 @@ function ProjectList() {
       setProjThumb(proj_list.thumbnail);
       setProjDesc(proj_list.desc);
       setProjRole(proj_list.role);
+      setProjUrl(proj_list.url);
       setToggleProjDetails(true);
     }
 
@@ -147,6 +163,7 @@ function ProjectList() {
                           setProjThumb(projList.thumbnail);
                           setProjDesc(projList.desc);
                           setProjRole(projList.role);
+                          setProjUrl(projList.url);
                           setToggleProjDetails(true);
                         }}
                       >
@@ -225,9 +242,25 @@ function ProjectList() {
                       <span className="fs-16 fw-300 txt-light-60 txt-left">
                         Description
                       </span>
-                      <p className="fs-18 fw-300 txt-light m-0 txt-left">
+                      <p
+                        className="fs-18 fw-300 txt-light m-0 txt-left"
+                        style={{ lineHeight: 1.8 }}
+                      >
                         {projDesc}
                       </p>
+                      <div
+                        id="my-buttons"
+                        className="display-flex dir-row gap-10 mt-50"
+                      >
+                        <Link
+                          to={projUrl}
+                          target="_blank"
+                          className="btn-line-link"
+                          style={{ display: projUrlToggle }}
+                        >
+                          Visit Site <img src={ArrowRightUp} alt="" />
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </div>
