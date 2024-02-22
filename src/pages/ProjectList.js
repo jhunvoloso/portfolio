@@ -1,4 +1,11 @@
-import React, { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import React, {
+  memo,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import MainLayout from "../layout/MainLayout";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -10,12 +17,12 @@ import mm from "../img/mm.png";
 import pt from "../img/pt.png";
 import close from "../img/close.svg";
 
-import {projectsList} from './data.js'
+import { projectsList } from "./data.js";
 
 function ProjectList() {
   const projects = useRef();
   const projects_tl = useRef();
-  const {id} = useParams();
+  const { id } = useParams();
 
   const [toggleProjectDetails, setToggleProjDetails] = useState(false);
 
@@ -81,11 +88,11 @@ function ProjectList() {
     };
   }, [toggleProjectDetails]);
 
-  let proj_list = projectsList.find((proj_list) => proj_list.id === parseInt(id));
+  let proj_list = projectsList.find(
+    (proj_list) => proj_list.id === parseInt(id)
+  );
 
-
-
-  useEffect(()=>{
+  useEffect(() => {
     console.log(id);
 
     if (proj_list !== undefined) {
@@ -114,43 +121,42 @@ function ProjectList() {
           </div>
 
           <div className="display-flex display-flex-center wrap dir-row gap-60 display-flex-align-center">
-
             {projectsList.map((projList) => {
-                return (
-                  <>
+              return (
+                <>
+                  <div
+                    key={projList.id}
+                    className="card-item display-flex dir-col gap-30"
+                  >
+                    <img src={projList.thumbnail} alt="" />
                     <div
-                      key={projList.id}
-                      className="card-item display-flex dir-col gap-30"
+                      id="my-buttons"
+                      className="display-flex display-flex-center dir-row gap-10"
                     >
-                      <img src={projList.thumbnail} alt="" />
-                      <div
-                        id="my-buttons"
-                        className="display-flex display-flex-center dir-row gap-10"
+                      <NavLink
+                        className="btn-line-link"
+                        key={projList.id}
+                        id={projList.id}
+                        //   onClick={() =>
+                        //     handleCardClick(id, title, thumb, desc, role)
+                        //   }
+                        onClick={(e) => {
+                          e.preventDefault();
+                          setcardState(projList.id);
+                          setProjTitle(projList.title);
+                          setProjThumb(projList.thumbnail);
+                          setProjDesc(projList.desc);
+                          setProjRole(projList.role);
+                          setToggleProjDetails(true);
+                        }}
                       >
-                        <NavLink
-                          className="btn-line-link"
-                          key={projList.id}
-                          id={projList.id}
-                          //   onClick={() =>
-                          //     handleCardClick(id, title, thumb, desc, role)
-                          //   }
-                          onClick={(e) => {
-                            e.preventDefault();
-                            setcardState(projList.id);
-                            setProjTitle(projList.title);
-                            setProjThumb(projList.thumbnail);
-                            setProjDesc(projList.desc);
-                            setProjRole(projList.role);
-                            setToggleProjDetails(true);
-                          }}
-                        >
-                          {projList.title}
-                          <img src={ArrowRightUp} alt="" />
-                        </NavLink>
-                      </div>
+                        {projList.title}
+                        <img src={ArrowRightUp} alt="" />
+                      </NavLink>
                     </div>
-                  </>
-                );
+                  </div>
+                </>
+              );
             })}
           </div>
         </div>
@@ -167,9 +173,12 @@ function ProjectList() {
               />
             </div>
             <div className="project-details-content">
-              <div className="display-flex dir-row gap-100">
-                <div>
-                  <img src={projThumb} alt="" />
+              <div className="display-flex dir-row dir-md-col gap-100">
+                <div
+                  className="display-flex dir-col gap-100"
+                  style={{ width: "100%" }}
+                >
+                  <img src={projThumb} alt="" style={{ width: "100%" }} />
                 </div>
                 <div
                   className="display-flex dir-col gap-100"
