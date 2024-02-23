@@ -9,11 +9,12 @@ import AboutMe from './components/AboutMe';
 import Tools from './components/Tools';
 import Career from './components/Career';
 import RecentProjects from './components/RecentProjects';
-
+import MainLayout from './layout/MainLayout';
 function App() {
   return (
     <div className="App">
-        <Header />
+      <MainLayout>
+        {/* <Header /> */}
         <Socials />
         <ScrollBullets />
 
@@ -23,7 +24,8 @@ function App() {
         <Career />
         <RecentProjects />
 
-        <Footer />
+        {/* <Footer /> */}
+      </MainLayout>
     </div>
   );
 }

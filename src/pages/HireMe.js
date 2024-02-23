@@ -93,7 +93,7 @@ function HireMe() {
         </div>
 
         <div id="resume" className="display-flex dir-col gap-10">
-          <a href={RESUME} download="JHUNVOLOSO-Resume.pdf" target="_blank" className="btn-outline">
+          <a href={RESUME} download="Jhun_Raymond_Voloso-Resume.pdf" target="_blank" className="btn-outline">
             Download Resume{" "}
             <svg
               id="download"

@@ -17,9 +17,9 @@ body {
     background-color: $primary;
     scroll-behavior: smooth;
 
-    &::-webkit-scrollbar {
-        display: none;
-    }
+    // &::-webkit-scrollbar {
+    //     display: none;
+    // }
 }
 
 .header {
@@ -27,6 +27,8 @@ body {
     display: flex;
     z-index: 10;
     width: 100%;
+    top: 0px;
+    left: 0px;
 
     &-wrapper {
         padding: 50px;
@@ -174,7 +176,8 @@ h6 {
 }
 
 .container {
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -230,6 +233,10 @@ h6 {
             &:hover {
                 border-bottom: 1px solid $light;
                 opacity: 1;
+            }
+
+            & img {
+                width: 24px !important;
             }
 
         }
@@ -657,15 +664,23 @@ h6 {
 
 @media screen and (max-width: 720px) {
     .App {
-        padding: 0px 16px;
+        // padding: 0px 16px;
+    }
+
+    .container {
+        // padding: 0px 16px;
+
+        &-default {
+            padding: 150px 0px;
+        }
     }
 
     .title {
-        font-size: 42px;
+        font-size: 32px;
     }
 
     .header-wrapper {
-        padding: 30px 40px;
+        padding: 30px 20px;
     }
 
     .swiper-buttons {
@@ -693,7 +708,33 @@ h6 {
         }
     }
 
+    .swiper-slide {
+        width: 100% !important;
+    }
+
     #about-wapper {
-        padding: 0px 50px;
+        padding: 0px 20px;
+    }
+
+    .scroll-wrapper {
+        display: none;
+    }
+
+    .tools-wrapper {
+        width: 100%;
+    }
+
+    .footer-wrapper {
+        display: none;
+    }
+
+    .toggle-close {
+        padding-right: 40px;
+    }
+
+    .card-item {
+        & img {
+            width: 100%;
+        }
     }
 }
