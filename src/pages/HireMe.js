@@ -6,14 +6,15 @@ import MailIcon from "../img/mail-icon.svg";
 import ArrowRightUp from "../img/arrow-right-up.svg";
 import ArrowDown from "../img/arrow-down.svg";
 import Download from "../img/download.svg";
+import skype from "../img/skype.svg";
 
-import RESUME from '../assets/resume.pdf'
+import RESUME from "../assets/resume.pdf";
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import SocialFooter from "../components/SocialFooter";
 
 function HireMe() {
-
   const hire = useRef();
   const tl = useRef();
 
@@ -34,9 +35,10 @@ function HireMe() {
           duration: 0.8,
           stagger: 0.5,
         })
-        .from("#resume", {
+        .from(["#resume", "#social-footer"], {
           opacity: 0,
           duration: 0.8,
+          stagger: 0.8
         });
     },
     { scope: hire }
@@ -51,8 +53,6 @@ function HireMe() {
   //   a.click();
   //   document.removeChild(a);
   // }
-
-
 
   return (
     <MainLayout>
@@ -73,6 +73,7 @@ function HireMe() {
 
         <div>
           <div className="display-flex dir-col gap-30">
+            {/* Number */}
             <div
               id="contact"
               className="display-flex dir-recent-proj-wrapper gap-20"
@@ -80,6 +81,8 @@ function HireMe() {
               <img src={PhoneIcon} alt="" />
               <span className="txt-light fs-16 fw-300">+63 928 275 9392</span>
             </div>
+
+            {/* E-mail */}
             <div
               id="email"
               className="display-flex dir-recent-proj-wrapper gap-20"
@@ -89,11 +92,25 @@ function HireMe() {
                 jhunvoloso@gmail.com
               </span>
             </div>
+
+            {/* Skype*/}
+            <div
+              id="email"
+              className="display-flex dir-recent-proj-wrapper gap-20"
+            >
+              <img src={skype} alt="" />
+              <span className="txt-light fs-16 fw-300">jhunry.voloso</span>
+            </div>
           </div>
         </div>
 
         <div id="resume" className="display-flex dir-col gap-10">
-          <a href={RESUME} download="Jhun_Raymond_Voloso-Resume.pdf" target="_blank" className="btn-outline">
+          <a
+            href={RESUME}
+            download="Jhun_Raymond_Voloso-Resume.pdf"
+            target="_blank"
+            className="btn-outline"
+          >
             Download Resume{" "}
             <svg
               id="download"
@@ -109,6 +126,10 @@ function HireMe() {
               />
             </svg>
           </a>
+        </div>
+
+        <div id="social-footer">
+          <SocialFooter />
         </div>
       </div>
     </MainLayout>
