@@ -17,9 +17,9 @@ body {
     background-color: $primary;
     scroll-behavior: smooth;
 
-    // &::-webkit-scrollbar {
-    //     display: none;
-    // }
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }
 
 .header {
