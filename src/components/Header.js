@@ -27,14 +27,13 @@ function Header() {
     { scope: head }
   );
 
-
   let win_height = window.innerHeight;
 
   let ctx_openMenu = gsap.context((context) => {
     context.add("openMenu", () => {
       gsap.timeline().to(".toggle-menu", {
         duration: 1,
-        height: win_height
+        height: win_height,
       });
     });
     context.add("closeMenu", () => {
@@ -46,31 +45,43 @@ function Header() {
   });
 
   useEffect(() => {
-
     toggleMenu === true ? ctx_openMenu.openMenu() : ctx_openMenu.closeMenu();
 
-    return ()=> {
-      toggleMenu ? console.log("false") : console.log("true") ;
-    }
+    return () => {
+      toggleMenu ? console.log("false") : console.log("true");
+    };
   }, [toggleMenu]);
 
   return (
     <div className="header" ref={head}>
       <div className="header-wrapper">
-        <img src={Logo} alt="" />
-        <button className="btn-open-menu" onClick={()=>{setToggleMenu(true)}}>
-        <img src={MenuBurger} alt="" />
+        <NavLink to='/'>
+          <img src={Logo} alt="" />
+        </NavLink>
+        <button
+          className="btn-open-menu"
+          onClick={() => {
+            setToggleMenu(true);
+          }}
+        >
+          <img src={MenuBurger} alt="" />
         </button>
       </div>
 
       <div className="toggle-menu">
         <div className="toggle-close">
-          <img src={close} alt="" onClick={()=>{setToggleMenu(false)}} />
+          <img
+            src={close}
+            alt=""
+            onClick={() => {
+              setToggleMenu(false);
+            }}
+          />
         </div>
         <div className="toggle-link">
-          <NavLink to='/'>Home</NavLink>
-          <NavLink to='/projects'>Projects</NavLink>
-          <NavLink to='/hire'>Hire Me</NavLink>
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/projects">Projects</NavLink>
+          <NavLink to="/hire">Hire Me</NavLink>
         </div>
       </div>
     </div>
