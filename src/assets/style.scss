@@ -632,7 +632,11 @@ h6 {
         bottom: 0px;
         z-index: 10;
         background-color: $primary;
-        overflow: hidden;
+        overflow: auto;
+
+         &::-webkit-scrollbar {
+             display: none;
+         }
 
         &-content {
             padding-top: 100px;
@@ -736,5 +740,9 @@ h6 {
         & img {
             width: 100%;
         }
+    }
+    .project-details-content {
+        padding-top: 50px;
+        padding-bottom: 50px;
     }
 }

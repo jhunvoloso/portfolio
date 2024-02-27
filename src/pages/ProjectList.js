@@ -1,8 +1,6 @@
 import React, {
   memo,
-  useCallback,
   useEffect,
-  useMemo,
   useRef,
   useState,
 } from "react";
@@ -11,10 +9,6 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { Link, NavLink, useParams } from "react-router-dom";
 import ArrowRightUp from "../img/arrow-right-up.svg";
-import fl from "../img/fl.png";
-import ss from "../img/ss.png";
-import mm from "../img/mm.png";
-import pt from "../img/pt.png";
 import close from "../img/close.svg";
 
 import { projectsList } from "./data.js";
@@ -103,12 +97,12 @@ function ProjectList() {
     };
   }, [toggleProjectDetails]);
 
-  let proj_list = projectsList.find(
-    (proj_list) => proj_list.id === parseInt(id)
-  );
+  let proj_list = projectsList.find((proj_list) => proj_list.id === parseInt(id));
 
   useEffect(() => {
     console.log(id);
+
+    // window.location.reload();
 
     if (proj_list !== undefined) {
       setcardState(proj_list.id);
@@ -202,7 +196,7 @@ function ProjectList() {
                   style={{ width: "100%" }}
                 >
                   <div
-                    className="display-flex dir-row gap-100"
+                    className="display-flex dir-row dir-md-col gap-100"
                     style={{ width: "100%" }}
                   >
                     <div
