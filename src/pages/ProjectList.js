@@ -1,9 +1,4 @@
-import React, {
-  memo,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import React, { memo, useEffect, useRef, useState } from "react";
 import MainLayout from "../layout/MainLayout";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -74,30 +69,21 @@ function ProjectList() {
     });
   });
 
-  const checkurl = () => {
-    return projUrl !== undefined ? (
-      <Link to={projUrl} target="_blank" className="btn-line-link">
-        {" "}
-        Visit Site <img src={ArrowRightUp} alt="" />{" "}
-      </Link>
-    ) : (
-      console.log("=> undefined" + projUrl)
-    );
-  };
-
   useEffect(() => {
     toggleProjectDetails === true
       ? ctx_open_proj_dets.open_proj_dets()
       : ctx_open_proj_dets.close_proj_dets();
 
-    projUrl !== "" ? setProjUrlToggle("flex") :  setProjUrlToggle('none');
+    projUrl !== "" ? setProjUrlToggle("flex") : setProjUrlToggle("none");
 
     return () => {
       toggleProjectDetails ? console.log("true") : console.log("false");
     };
   }, [toggleProjectDetails]);
 
-  let proj_list = projectsList.find((proj_list) => proj_list.id === parseInt(id));
+  let proj_list = projectsList.find(
+    (proj_list) => proj_list.id === parseInt(id)
+  );
 
   useEffect(() => {
     console.log(id);
@@ -113,6 +99,8 @@ function ProjectList() {
       setProjUrl(proj_list.url);
       setToggleProjDetails(true);
     }
+
+    window.scrollTo(0, 0);
 
     console.log(proj_list);
   }, []);

@@ -1,7 +1,5 @@
 //import './App.css';
 import './assets/style.scss';
-import Header from './components/Header';
-import Footer from './components/Footer';
 import Socials from './components/Socials';
 import ScrollBullets from './components/ScrollBullets';
 import Banner from './components/Banner';
@@ -10,7 +8,13 @@ import Tools from './components/Tools';
 import Career from './components/Career';
 import RecentProjects from './components/RecentProjects';
 import MainLayout from './layout/MainLayout';
+import { useEffect } from 'react';
 function App() {
+
+  useEffect(()=>{
+        window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="App">
       <MainLayout>
